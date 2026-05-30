@@ -28,6 +28,11 @@ export function getParam(param) {
   return urlParams.get(param);
 }
 
+// load header and footer
+export function loadHeaderFooter() {
+  // Header and footer are static in this version
+}
+
 // render a list of items using a template function
 export function renderListWithTemplate(templateFn, parentElement, list, position = "afterbegin", clear = false) {
   if (clear) {
