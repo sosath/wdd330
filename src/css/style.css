@@ -151,6 +151,50 @@ button {
   text-align: center;
 }
 
+.categories {
+  margin-top: 2rem;
+  padding: 1rem;
+}
+
+.categories h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.categories-list {
+  display: flex;
+  flex-flow: row wrap;
+  list-style-type: none;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.category-card {
+  flex: 1 1 auto;
+  min-width: 100px;
+  max-width: 120px;
+  text-align: center;
+}
+
+.category-card a {
+  text-decoration: none;
+  color: var(--dark-grey);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.category-card img {
+  width: 80px;
+  height: 80px;
+}
+
+.category-card h3 {
+  font-size: 1em;
+  margin: 0;
+}
+
 .products {
   margin-top: 2rem;
   padding: 1rem;
