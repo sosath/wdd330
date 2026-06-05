@@ -1,7 +1,5 @@
 import { getLocalStorage, loadHeaderFooter } from './utils.mjs';
 
-await loadHeaderFooter();
-
 function renderCartContents() {
   const cartItems = getLocalStorage('so-cart');
   if (cartItems) {
@@ -29,4 +27,7 @@ function cartItemTemplate(item) {
   return newItem;
 }
 
-renderCartContents();
+(async () => {
+  await loadHeaderFooter();
+  renderCartContents();
+})();

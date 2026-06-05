@@ -2,22 +2,24 @@ import ProductData from './ProductData.mjs';
 import ProductList from './ProductList.mjs';
 import { loadHeaderFooter, getParam } from './utils.mjs';
 
-await loadHeaderFooter();
+(async () => {
+  await loadHeaderFooter();
 
-const category = getParam('category');
+  const category = getParam('category');
 
-// Update the page title with the category
-const categoryTitle = category.charAt(0).toUpperCase() + category.slice(1).replace('-', ' ');
-document.querySelector('.products h2').textContent = `Top Products: ${categoryTitle}`;
+  // Update the page title with the category
+  const categoryTitle = category.charAt(0).toUpperCase() + category.slice(1).replace('-', ' ');
+  document.querySelector('.products h2').textContent = `Top Products: ${categoryTitle}`;
 
-// first create an instance of the ProductData class.
-const dataSource = new ProductData();
+  // first create an instance of the ProductData class.
+  const dataSource = new ProductData();
 
-// then get the element you want the product list to render into
-const listElement = document.querySelector('.product-list');
+  // then get the element you want the product list to render into
+  const listElement = document.querySelector('.product-list');
 
-// then create an instance of the ProductList class and send it the correct information.
-const myList = new ProductList(category, dataSource, listElement);
+  // then create an instance of the ProductList class and send it the correct information.
+  const myList = new ProductList(category, dataSource, listElement);
 
-// finally call the init method to show the products
-myList.init();
+  // finally call the init method to show the products
+  myList.init();
+})();
